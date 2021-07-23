@@ -1,5 +1,6 @@
 
 import dot from '../assets/namedot.svg';
+import work from '../assets/worksvg.svg';
 
 const Home = () => {
     return ( 
@@ -11,8 +12,11 @@ const Home = () => {
         <p className="greeting common" >I'm</p>
         <h2 className="name common" >MIMANSHA <br/>SWARUP</h2>
         <h1 className="desg common">CSE Undergrad.</h1>
-        <button className="primary-btn">view</button>
-        <button className="sec-btn">view</button>
+        <div className="bg-img">
+
+        <img className="work-bg" src={work} alt="dot" />
+        </div>
+
       
 
       </div>

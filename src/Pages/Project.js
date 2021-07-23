@@ -1,30 +1,24 @@
 import PgHeading from "../Components/PgHeading";
+import Cards from "../Components/Cards";
+import {projdb} from '../db/ProjectsList'
 
-import numberPattern from "../assets/number.svg"
+
 
 const ProjectPg = () => {
+  const rev=projdb.reverse()
+  console.log(rev)
     return ( 
         <div className="project">
             <PgHeading title="Projects"/>
-        <ol className="project-cont">
-          <div className="card">
-          <li>
-              <img src={numberPattern} alt="" className="num-patt" />
-            <p className="project-title">Spotify Clone</p>
-            <div className="stack">
-                <p className="badge">heml</p>
-            </div>
-            <p className="description">Lorem Ipsum is simply dummy text of the printing 
-and typesetting industry. Lorem Ipsum has been 
-the industry's standard dummy text ever 
-</p>
+        <ol reversed className="project-cont col">
+          {
+            projdb.reverse().map(proj=>(
+              <Cards key={proj.id} isProj={true}  proj={proj}/>
 
-          <button className="primary-btn">view code</button>
-          <button className="sec-btn">view code</button>
-          </li>
-          </div>
+            ))
+          }
+          
         </ol>
-        <h1>hello</h1>
       </div>
     
      );
